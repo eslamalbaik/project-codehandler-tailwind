@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/output.css" rel="stylesheet">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <script src="/input.css"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,400;1,800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+  <!-- Owl Carousel -->
+  <!-- <link rel="stylesheet" href="OwlCarousel/owl.carousel.min.css"> -->
+  <!-- <link rel="stylesheet" href="OwlCarousel/owl.theme.default.css"> -->
+  <style>
+    @keyframes carouselAnim {
+      from {
+        transform: translate(0, 0);
+      }
+
+      to {
+        transform: translate(calc(-100% + (6*300px)));
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .container .carousel-items {
+        animation: carouselAnim 60s infinite alternate linear;
+      }
+
+      @keyframes carouselAnim {
+        from {
+          transform: translate(0, 0);
+        }
+
+        to {
+          transform: translate(calc(-100% + (5*300px)));
+        }
+      }
+    }
+
+    .carousel-focus:hover {
+      transition: all 0.8s;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+  <!-- start navbar -->
+  <div class="navbar ">
+    <nav class=" bg-white px-10 mx-auto  md:flex md:items-center md:justify-between ">
+      <div class="flex items-center justify-between">
+        <h1><img class="h-[60px]  " src="/images/logo.png" alt="logo"></h1>
+        <button class="h-6 w-6 md:hidden" id="menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+            stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden flex-col items-center justify-center  md:flex md:flex-row md:space-x-8" id="links">
+        <a href="#"
+          class="mt-4  text-lg font-bold font-sans hover:text-[rgb(255,62,129)] hover:after:text-[rgb(255,62,129)] active
+            relative md:after md:after:absolute  md:after:content-['01']  md:after:mt-5  md:after:text-gray-300   md:after:font-medium after:text-xs	 md:after:-top-8 after:right-0">Home</a>
+        <a href="#"
+          class="mt-4  text-lg font-bold font-sans hover:text-[rgb(255,62,129)] hover:after:text-[rgb(255,62,129)]
+              relative md:after md:after:absolute  md:after:content-['02']  md:after:mt-5  md:after:text-gray-300   md:after:font-medium after:text-xs	 md:after:-top-8 md:after:right-0 ">Service</a>
+        <a href="#"
+          class="mt-4  text-lg font-bold font-sans hover:text-[rgb(255,62,129)] hover:after:text-[rgb(255,62,129)]
+              relative md:after md:after:absolute  md:after:content-['03']  md:after:mt-5  md:after:text-gray-300   md:after:font-medium after:text-xs	 md:after:-top-8 md:after:right-0">Pricing</a>
+        <a href="#"
+          class="mt-4  text-lg font-bold font-sans hover:text-[rgb(255,62,129)] hover:after:text-[rgb(255,62,129)]
+                relative md:after md:after:absolute  md:after:content-['04']  md:after:mt-5  md:after:text-gray-300   md:after:font-medium after:text-xs	 md:after:-top-8 md:after:right-0 ">Clients</a>
+        <a href="#"
+          class="mt-4 text-lg font-bold font-sans hover:text-[rgb(255,62,129)] hover:after:text-[rgb(255,62,129)]
+                  relative md:after md:after:absolute  md:after:content-['05']  md:after:mt-5  md:after:text-gray-300   md:after:font-medium after:text-xs	 md:after:-top-8 md:after:right-0">News</a>
+        <a href="#"
+          class="mt-4 text-lg font-bold font-sans hover:text-[rgb(255,62,129)] hover:after:text-[rgb(255,62,129)]
+                        relative md:after md:after:absolute  md:after:content-['06']  md:after:mt-5  md:after:text-gray-300   md:after:font-medium after:text-xs	 md:after:-top-8 md:after:right-0 ">Contacts</a>
+        <button
+          class="mt-4  bg-blue-500 rounded-full px-10 py-[10px] text-white font-medium text-xl hover:bg-[rgb(255,62,129)]">Signup</button>
+      </div>
+    </nav>
+  </div>
+  <!-- End navbar -->
+
+  <!-- start header -->
+  <header class="flex items-center  flex-wrap justify-between px-10 md:px-52 mx-auto pt-28 ">
+    <div class="w-full md:w-1/2">
+      <img class="h-[500px] mx-auto" src="images/header.png" alt="header">
+    </div>
+    <div class="w-full md:w-1/2 space-y-6">
+      <h2 class="text-[27px] font-[400] leading-10	text-[rgb(33, 37, 41)]">Multipurpose landing template </h2>
+      <h1 class=" text-[#303669] text-[55px] bolg leading-[50px] "><strong>Beautifully <br> simple, code.</strong></h1>
+      <p class="text-lg text-[#211F29] ">Codelander is a beautifully simple, clean and lightweight landing page template
+        for all types
+        of businesses,
+        with bold and bright colours. </p>
+      <button
+        class="bg-[rgb(255,62,129)] rounded-full px-10 py-[10px] text-white font-medium text-xl hover:bg-blue-500">
+        Learn More</button>
+    </div>
+
+  </header>
+  <!-- End header -->
+  <!-- start serivces-main -->
+  <section class="services-main relative mb-11   ">
+    <div class="strategy-section-bg absolute w-1/4 right-[0] top-[-230px]">
+      <img class="z-40 h-[350px]" src="images/strategy-section-bg.png" alt="strategy-section">
+    </div>
+    <div class="services flex items-center justify-between flex-wrap px-10 mt-24 md:px-52 px-auto space-y-6">
+      <div class="w-full md:w-1/4 text-center space-y-3">
+        <img class="ml-[120px] h-24" src="images/strategy-1.png" alt="strategy">
+        <h2 class="font-bold text-[#303669] text-lg">Strategy</h2>
+        <p class="font-normal text-[16px] leading-6 ">We'll work with you to develop <br>the right strategy.</p>
+      </div>
+      <div class="w-full md:w-1/4 text-center space-y-3 ">
+        <img class="ml-[120px] h-20" src="images/strategy-2.png" alt="strategy">
+        <h2 class="font-bold text-[#303669] text-lg">Automation</h2>
+        <p class="font-normal text-[16px] leading-6 ">Work synchronization and <br> automated services.</p>
+      </div>
+      <div class="w-full md:w-1/4 text-center space-y-3">
+        <img class="ml-[120px] h-20" src="images/strategy-3.png" alt="strategy">
+        <h2 class="font-bold text-[#303669] text-lg">Deployment</h2>
+        <p class="font-normal text-[16px] leading-6 ">Dedicated servers to deploy <br>and test applications.</p>
+      </div>
+      <div class="w-full md:w-1/4 text-center space-y-3">
+        <img class="ml-[120px] h-20" src="images/strategy-4.png" alt="strategy">
+        <h2 class="font-bold text-[#303669] text-lg">Education</h2>
+        <p class="font-normal text-[16px] leading-6 ">Stay informed on all our tools <br>and technologies.</p>
+      </div>
+    </div>
+
+  </section>
+  <!-- End serivces-main -->
+  <!-- start Solving Problems -->
+  <section
+    class="Solving-Problems flex items-center flex-wrap justify-between px-10 md:px-52 pt-28 text-center md:text-left">
+    <div class="space-y-6 -mt-6 w-full md:w-1/2">
+      <h3 class="font-normal leading-[44px] text-[32px]">Our services</h3>
+      <h1 class="text-[#303669] text-[45px] bolg leading-[50px]"><strong>Solving Problems</strong></h1>
+      <p class="font-light leading-[34px] text-[20px]">This is a great section to introduce your <br> company and
+        showcase your featured services.</p>
+      <aside>
+        <details>
+          <summary class="bg-blue-500 md:w-[400px] w-[200px] md:h-14 h-9 md:ml-0 ml-16 rounded-full px-10 py-[10px] text-white font-normal md:font-medium md:text-xl text-base
+              hover:bg-blue-400   ">
+            Website Design
+          </summary>
+          <p class="text-sm text-gray-500 mt-4 ml-6 transition-all duration-1000">More information on your application
+            development <br> services can
+            go
+            here,too. There's plenty of space <br> available for you.</p>
+        </details>
+      </aside>
+      <br>
+      <aside>
+        <details>
+          <summary class="bg-blue-500 md:w-[400px] w-[200px] md:h-14 h-9 md:ml-0 ml-16 rounded-full px-10 py-[10px] text-white font-normal md:font-medium md:text-xl text-base
+              hover:bg-blue-400   ">
+            Application Development
+          </summary>
+          <p class="text-sm text-gray-500 mt-4 ml-6 transition-all duration-1000">More information on your application
+            development <br> services can
+            go
+            here,too. There's plenty of space <br> available for you.</p>
+        </details>
+      </aside>
+
+      <!-- <i class="fa-sharp fa-solid fa-plus ml-16"></i> -->
+    </div>
+    <div class="w-full md:w-1/2">
+      <img class="h-[450px] w-auto" src="images/services-header.png" alt="services-header">
+    </div>
+  </section>
+  <!-- End Solving Problems -->
+  <!-- start  Sales Growth -->
+  <section
+    class="Sales-Growth flex items-center flex-wrap justify-between px-10 md:px-52 pt-28 text-center md:text-left relative">
+    <div class="w-full md:w-1/2 ">
+      <img class="w-[600px] h-[457px]" src="images/services-sales-header.png" alt="services-header">
+    </div>
+    <div class="space-y-6 -mt-6 w-full md:w-1/2">
+      <h3 class="font-normal leading-[44px] text-[32px] md:mt-0 mt-8">Our services</h3>
+      <h1 class="text-[#303669] text-[45px] bolg leading-[50px]"><strong>Sales Growth</strong></h1>
+      <p class="font-normal leading-[34px] text-[20px]">You can talk about your secondary services here, maybe
+        promote
+        your excellent customer service approach. Alws grab your website visitors' attention.
+      </p>
+      <button
+        class="bg-[rgb(255,62,129)] rounded-full px-10 py-[10px] text-white font-medium text-xl hover:bg-blue-500">
+        View Pricing </button>
+    </div>
+  </section>
+  <div class="strategy-section-bg absolute md:w-1/4 right-[2px] bottom-[-150px]">
+    <img class="z-40 h-[350px]" src="images/pricing-section-left-bg.png" alt="section-1">
+  </div>
+  <!-- End Sales Growth -->
+  <!-- start Pricing -->
+  <section class="Pricing my-14 px-10 md:px-64 mx-auto">
+    <div class="my-4 text-center">
+      <h1 class="text-[#303669] text-[48px] bolg leading-[50px] "><strong>Pricing</strong></h1>
+      <p class="font-normal leading-[28px] text-[20px]  my-6">Offer multiple packages or monthly
+        subscriptions? Why not showcase your <br> featured price plans here, bold and beautifully. </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 container mx-auto my-10">
+      <div class="bg-white rounded-[32px] h-[450px] w-80 mt-8 hover:shadow-2xl p-5 text-center mx-auto">
+        <h1 class="text-5xl text-[#303669] leading-[50px] pt-4"><strong>$199</strong></h1>
+        <h2 class="text-blue-400 text-[20px] py-2"><strong>Basic</strong></h2>
+        <p class="text-2xl leading-7 mb-5">Starter plan with all the <br> basics included</p>
+        <ul class="space-y-3 mt-4">
+          <li class="flex items-center justify-center">
+            <div>
+              <i class="fa-sharp fa-solid fa-circle-check text-[24px] text-blue-400 mr-5 "></i>
+            </div>
+            <div>
+              Core Business System
+            </div>
+          </li>
+          <li class="flex items-center justify-center">
+            <div>
+              <i class="fa-sharp fa-solid fa-circle-check text-[24px] text-blue-400 mr-5 "></i>
+            </div>
+            <div>
+              Core Business System
+            </div>
+          </li>
+
+          <li class="flex items-center justify-center">
+            <div>
+              <i class="fa-regular fa-circle text-[24px] text-blue-400 mr-5 "></i>
+            </div>
+            <div class="mr-5  font-normal">
+              Team Management
+            </div>
+          </li>
+          <li class="flex items-center justify-center">
+            <div>
+              <i class="fa-regular fa-circle text-[24px] text-blue-400 mr-5 "></i>
+            </div>
+            <div class="mr-5">
+              Team Management
+            </div>
+          </li>
+          <li>
+            <button
+              class="bg-blue-500  rounded-full px-10 py-[10px] mt-3 text-white font-medium text-xl hover:bg-[rgb(255,62,129)]">
+              Enquire</button>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="bg-white h-[32rem] w-80  border-[6px] border-blue-400 border-dashed rounded-[32px]  hover:shadow-2xl p-5 text-center mx-auto ">
+        <button class="bg-blue-400  rounded-full px-4 py-[10px] mt-3 text-white font-medium text-sm ">
+          POPULAR</button>
+        <h1 class="text-6xl text-[#303669] leading-[50px] pt-4"><strong>$499 </strong></h1>
+        <h2 class="text-blue-400 text-[20px] py-2"><strong>Growth</strong></h2>
+        <p class="text-2xl leading-7 mb-5">The sensible option for <br> growing companies</p>
+        <ul class="space-y-3 mt-4">
+          <li class="flex items-center justify-center">
+            <div>
+              <i class="fa-sharp fa-solid fa-circle-check text-[24px] text-blue-400 mr-5 "></i>
+            </div>
+            <div>
+              Core Business System
+            </div>
+          </li>
+          <li class="flex items-center justify-center">
+            <div>
+              <i class="fa-sharp fa-solid fa-circle-check text-[24px] text-blue-400 mr-5 "></i>
+            </div>
+            <div>
+              Core Business System
+            </div>
+          </li>
+
+          <li class="flex items-center justify-center">
+            <div>
+              <i class="fa-regular fa-circle text-[24px] text-blue-400 mr-5 "></i>
+            </div>
+            <div class="mr-5  font-normal">
+              Team Management
+            </div>
+          </li>
+          <li class="flex items-center justify-center">
+            <div>
+              <i class="fa-regular fa-circle text-[24px] text-blue-400 mr-5 "></i>
+            </div>
+            <div class="mr-5">
+              Team Management
+            </div>
+          </li>
+          <li>
+            <button
+              class="bg-blue-500  rounded-full px-10 py-[10px] mt-3 text-white font-medium text-xl hover:bg-[rgb(255,62,129)]">
+              Enquire</button>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-[32px] h-[450px] w-80 mt-8 hover:shadow-2xl p-5 text-center mx-auto">
+        <h1 class="text-5xl text-[#303669] leading-[50px] pt-4"><strong>$1299</strong></h1>
+        <h2 class="text-blue-400 text-[20px] py-2"><strong>Corporate</strong></h2>
+        <p class="text-2xl leading-7 mb-5">Everything a global <br> company needs</p>
+        <ul class="space-y-3 mt-4">
+          <li class="flex items-center justify-center">
+            <div>
+              <i class="fa-sharp fa-solid fa-circle-check text-[24px] text-blue-400 mr-5 "></i>
+            </div>
+            <div>
+              Core Business System
+            </div>
+          </li>
+          <li class="flex items-center justify-center">
+            <div>
+              <i class="fa-sharp fa-solid fa-circle-check text-[24px] text-blue-400 mr-5 "></i>
+            </div>
+            <div>
+              Core Business System
+            </div>
+          </li>
+
+          <li class="flex items-center justify-center">
+            <div>
+              <i class="fa-sharp fa-solid fa-circle-check text-[24px] text-blue-400 mr-5 "></i>
+            </div>
+            <div class="mr-5  font-normal">
+              Team Management
+            </div>
+          </li>
+          <li class="flex items-center justify-center">
+            <div>
+              <i class="fa-sharp fa-solid fa-circle-check text-[24px] text-blue-400 mr-5 "></i>
+            </div>
+            <div class="mr-5">
+              Team Management
+            </div>
+          </li>
+          <li>
+            <button
+              class="bg-blue-500  rounded-full px-10 py-[10px] mt-3 text-white font-medium text-xl hover:bg-[rgb(255,62,129)]">
+              Enquire</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- End Pricing -->
+  <section class="bg-white my-14 px-10 md:px-64 mx-auto pt-20 relative ">
+    <div class="strategy-section-bg4 absolute w-1/4 left-[0] top-[0] "
+      style=" margin-left: -250px !important; margin-right: -250px !important; margin-top: 100px !important;">
+      <img class="z-40" src="images/pricing-section-right-bg.png" alt="strategy-section">
+    </div>
+
+    <div class="bg-white my-4 text-center">
+      <p class="font-normal leading-[28px] text-[20px]  my-6 ">Our clients </p>
+      <h1 class="text-[#303669] text-[48px] bolg leading-[50px] mb-8"><strong>Client Showcase </strong></h1>
+    </div>
+    <div class="bg-white container mx-auto w-max overflow-hidden relative ">
+      <div class="carousel-items flex items-center justify-center"
+        style="width: fit-content; animation: carouselAnim 10s infinite alternate linear;">
+        <div class="carousel-focus flex items-center flex-col relative " style="width: 270px;">
+          <img class=" grayscale  h-[200px] w-[200px]" src="images/logo1.png" alt="Img">
+        </div>
+        <div class="carousel-focus flex items-center flex-col relative  " style="width: 270px;">
+          <img class="grayscale  h-[200px] w-[200px]" src="images/logo2.png" alt="Img">
+        </div>
+        <div class="carousel-focus flex items-center flex-col relative" style="width: 270px;">
+          <img class="grayscale  h-[200px] w-[200px] " src="images/logo4.png" alt="Img">
+        </div>
+        <div class="carousel-focus flex items-center flex-col relative" style="width: 270px;">
+          <img class="h-[200px] w-[200px] " src="images/logo3.png" alt="Img">
+        </div>
+        <div class="carousel-focus flex items-center flex-col relative " style="width: 270px;">
+          <img class="h-[200px] w-[200px] " src="images/logo1.png" alt="Img">
+        </div>
+        <div class="carousel-focus flex items-center flex-col relative  " style="width: 270px;">
+          <img class="h-[200px] w-[200px]" src="images/logo2.png" alt="Img">
+        </div>
+        <div class="carousel-focus flex items-center flex-col relative" style="width: 270px;">
+          <img class="h-[340px] w-[300px]" src="images/logo4.png" alt="Img">
+        </div>
+        <div class="carousel-focus flex items-center flex-col relative" style="width: 270px;">
+          <img class="h-[340px] w-[300px] shadow-2xl" src="images/logo3.png" alt="Img">
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- start Pricing -->
+  <section class="Pricing my-14 px-10 md:px-64 mx-auto">
+    <div class="my-4 text-center">
+      <p class="font-normal leading-[28px] text-[20px]   mt-40">Offer packages </p>
+      <h1 class="text-[#303669] text-[38px] bolg leading-[50px] "><strong>Featured Stories </strong></h1>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 container mx-auto my-10">
+      <div class="bg-white rounded-[32px] h-[450px] w-80 mt-16 hover:shadow-2xl p-5 text-center  mx-auto">
+        <img src="images/blog-card-1.png" class="w-48 ml-10 mt-10" alt="blog">
+        <h1 class="text-2xl text-[#303669] leading-[50px] pt-4"><strong>Remote Working</strong></h1>
+        <p class="text-[16px] leading-7 mb-5">Starter plan with all the <br> basics included</p>
+        <button class="bg-white rounded-full px-10 py-[10px] text-blue-500 font-medium text-xl hover:text-[#303669] ">
+          Read More</button>
+      </div>
+      <div class="bg-white rounded-[32px] h-[32rem] w-80 mt-8 hover:shadow-2xl p-5 text-center mx-auto">
+        <img src="images/blog-card-2.png" class="w-48 ml-10 mt-10" alt="blog">
+        <h1 class="text-2xl text-[#303669] leading-[50px] pt-4"><strong>Remote Working</strong></h1>
+        <h2 class="text-gray-400 text-[20px] py-2">Keywords</h2>
+        <p class="text-[14px] leading-7 mb-5">We've ranked number one on <br> Google for multiple keywords. Read <br>
+          about our
+          SEO strategies
+
+        </p>
+        <button class="bg-blue-500  rounded-full px-10 py-[10px] text-white font-medium text-xl hover:text-[#303669] ">
+          Read More</button>
+      </div>
+      <div class="bg-white rounded-[32px] h-[450px] w-80 mt-16 hover:shadow-2xl p-5 text-center mx-auto">
+        <img src="images/blog-card-3.png" class="w-48  h-40 ml-10 mt-10" alt="blog">
+        <h1 class="text-2xl text-[#303669] leading-[50px] pt-4"><strong>Remote Working</strong></h1>
+        <p class="text-[16px] leading-7 mb-5">Starter plan with all the <br> basics included</p>
+        <button class="bg-white rounded-full px-10 py-[10px] text-blue-500 font-medium text-xl hover:text-[#303669] ">
+          Read More</button>
+      </div>
+    </div>
+  </section>
+  <!-- End Pricing -->
+  <section class="Contact flex items-center flex-wrap justify-between px-10 md:px-64 mx-auto pt-20 ">
+
+    <div class="w-full md:w-1/2 space-y-6 ">
+      <h3 class="text-[22px]">Contact</h3>
+      <h1 class="text-[#303669] text-[55px]  leading-[50px]"><strong>Questions?</strong> <br>
+        <strong>Get in touch</strong>
+      </h1>
+      <p class="font-normal leading-[34px] text-[20px]">
+        We'll be happy to help answer any of your questions. Send us an email and we'll get back to you shortly.
+      </p>
+      <button
+        class="bg-[rgb(255,62,129)] rounded-full px-10 py-[10px] text-white font-medium text-xl hover:bg-blue-500">
+        Send an Email</button>
+    </div>
+    <div class="w-full md:w-1/2">
+      <img class="h-[500px] mx-auto" src="images/contact-header-img.png" alt="contact">
+    </div>
+
+
+  </section>
+  <footer class="flex flex-col flex-wrap gap-10 md:gap-24 px-52 text-white bg-[#303669]">
+    <div class="flex flex-wrap gap-16 space-y-12">
+      <div class="mt-12">
+        <img class="h-1/4" src="images/logo_footer.png" alt="logo">
+        <p class="mt-8 ml-2">A beautiful landing page <br> template by Codefest. </p>
+      </div>
+      <div>
+        <h1 class="text-2xl  leading-[50px]  pb-6"><strong>About</strong></h1>
+        <p class="font-normal leading-[34px] text-[18px]">We like to do business <br> at Codelander HQ to our <br>
+          clients' satisfaction. </p>
+      </div>
+      <div>
+        <h1 class="text-2xl  leading-[50px]  pb-6"><strong>Contact Us </strong></h1>
+
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2 justify-center">
+
+            <i class="fa-solid fa-location-pin text-blue-300"></i>
+            123 Business Centre
+          </li>
+          <li class="flex items-center gap-2 justify-center">
+            <i class="fa-solid fa-phone text-blue-300"></i>
+            (+972) 0123456789
+          </li>
+          <li class="flex items-center gap-2 justify-center">
+            <i class="fa-solid fa-envelope text-blue-300"></i>
+            mail@domain.com
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h1 class="text-2xl  leading-[50px] pb-6 "><strong>Socials</strong></h1>
+
+        <ul class="flex flex-row gap-4 text-xl">
+          <li><i class="fa-brands fa-facebook"></i></li>
+          <li><i class="fa-brands fa-twitter"></i></li>
+          <li><i class="fa-brands fa-instagram"></i></li>
+          <li><i class="fa-brands fa-linkedin"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center">
+      <h1>
+        © 2020 Codefest™. All Rights Reserved.
+      </h1>
+    </div>
+  </footer>
+  <script>
+    menu = document.getElementById("menu")
+    links = document.getElementById("links")
+    menu.addEventListener('click', function (e) {
+      e.preventDefault()
+      links.classList.toggle('flex')
+      links.classList.toggle('hidden')
+    })
+  </script>
+</body>
+
+</html>

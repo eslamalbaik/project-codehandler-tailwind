@@ -1,0 +1,27 @@
+npm init
+
+npm install
+
+npx tailwindcss init
+
+npm install -D tailwindcss postcss autoprefixer
+
+create input.css add css directives
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities
+
+create empty output.css
+
+create index.html and add output.css link
+
+
+ add each component  in tailwind.config.js
+
+
+and then ensure you have the input.css and output.css and also html (all your files) in the same directory level
+
+
+npx tailwindcss -i input.css -o output.css --watch
